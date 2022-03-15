@@ -18,10 +18,12 @@ Here are some ideas to get you started:
 插入多行代码，分别使用三个反引号（```）包裹多行代码。或者使用缩进 ```c++
 
 2^8^=256
+x<sup>2</sup>2
 指数
 
 下标
 a~0~=1
+a<sub>0</sub>
 
 -->
 
@@ -44,11 +46,9 @@ int fib(int n) {
   return fib(n - 1） + fib(n - 2);
 }
 ```
-2^8^  
-x^2^  
-$x^2=a$  
-O(branches^dep^)
-每个调用有两个分支，所以是O(2^N^)
+ 
+O(branches<sup>dep</sup>)
+每个调用有两个分支，所以是O(2<sup>N</sup>)
 
 ### 复杂排序
 遍历字符串数组，取出每个字符串并对其排序，最后排序整个数组，时间复杂度是多少？
