@@ -44,7 +44,8 @@ int fib(int n) {
   return fib(n - 1） + fib(n - 2);
 }
 ```
-2^8^
+2^8^  
+x^2^  
 O(branches^dep^)
 每个调用有两个分支，所以是O(2^N^)
 
