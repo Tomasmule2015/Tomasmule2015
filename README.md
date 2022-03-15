@@ -46,6 +46,7 @@ int fib(int n) {
 ```
 2^8^  
 x^2^  
+$x^2=a$  
 O(branches^dep^)
 每个调用有两个分支，所以是O(2^N^)
 
