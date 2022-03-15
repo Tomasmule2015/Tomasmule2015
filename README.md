@@ -50,6 +50,31 @@ int fib(int n) {
 O(branches<sup>dep</sup>)
 每个调用有两个分支，所以是O(2<sup>N</sup>)
 
+打印所有从0到n的斐波那契数列，时间复杂度？
+```c++
+int fib(int n) {
+  if(n <= 0) return 0;
+  else if (n == 1) return 1;
+  return fib(n - 1） + fib(n - 2);
+}
+
+void allfib(int n) {
+  for (int i = 0; i < n; i++) {
+    cout<<fib(i)<<" ";
+  }
+}
+```
+并不是n*2<sup>n</sup>
+一个个推倒：
+fib(1) = 2<sup>0</sup>
+fib(2) = 2<sup>1</sup>
+fib(3) = 2<sup>2</sup>
+fib(4) = 2<sup>3</sup>
+...
+fib(n) = 2<sup>n - 1</sup>
+
+累加： 2<sup>n</sup>
+
 ### 复杂排序
 遍历字符串数组，取出每个字符串并对其排序，最后排序整个数组，时间复杂度是多少？
 
