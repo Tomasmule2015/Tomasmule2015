@@ -119,5 +119,71 @@ https://cloud.tencent.com/developer/article/1688297
 抢占  
 多级队列  
 
+### 3月17日
+### C++11：并行与并发
+std::thread用于创建一个执行的线程实例 get_id() join()  
+```c++
+#include <iostream>
+#include <thread>
+int main()
+{
+    std::thread t ([]() {
+        std::cout<<" hello word."<<std::endl;
+        });
+        t.join();
+     return 0;
+}
+```
+或者thread t(func, args)进行初始化
+
+互斥量与临界区
+mutex类， lock_guard 与unique_lock， std::lock_guard 不能显式的调用 lock 和 unlock， 而 std::unique_lock 可以在声明后的任意位置调用， 可以缩小锁的作用范围，提供更高的并发度。  
+```c++
+#include <iostream>
+#include <mutex>
+#include <thread>
+
+int v = 1;
+
+void critical_section(int change_v) {
+    static std::mutex mtx;
+    std::lock_guard<std::mutex> lock(mtx);
+
+    // 执行竞争操作
+    v = change_v;
+
+    // 离开此作用域后 mtx 会被释放
+}
+
+int main() {
+    std::thread t1(critical_section, 2), t2(critical_section, 3);
+    t1.join();
+    t2.join();
+
+    std::cout << v << std::endl;
+    return 0;
+}
+```
+期物 future
+future提供了一个访问异步操作结果的途径，可以作为屏障
+```c++
+#include <iostream>
+#include <future>
+#include <thread>
+
+int main() {
+    // 将一个返回值为7的 lambda 表达式封装到 task 中
+    // std::packaged_task 的模板参数为要封装函数的类型
+    std::packaged_task<int()> task([](){return 7;});
+    // 获得 task 的期物
+    std::future<int> result = task.get_future(); // 在一个线程中执行 task
+    std::thread(std::move(task)).detach();
+    std::cout << "waiting...";
+    result.wait(); // 在此设置屏障，阻塞到期物的完成
+    // 输出执行结果
+    std::cout << "done!" << std:: endl << "future result is " << result.get() << std::endl;
+    return 0;
+}
+```
 
 
