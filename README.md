@@ -186,4 +186,26 @@ int main() {
 }
 ```
 
+原子操作
+std::atomic 
+原子操作是在多线程程序中“最小的且不可并行化的”操作
+当然，并非所有的类型都能提供原子操作，这是因为原子操作的可行性取决于 CPU 的架构以及所实例化的类型结构是否满足该架构对内存对齐 条件的要求，因而我们总是可以通过 std::atomic<T>::is_lock_free 来检查该原子类型是否需支持原子操作，例如：
+  
+```C++
+#include <atomic>
+#include <iostream>
+
+struct A {
+    float x;
+    int y;
+    long long z;
+};
+
+int main() {
+    std::atomic<A> a;
+    std::cout << std::boolalpha << a.is_lock_free() << std::endl;
+    return 0;
+}
+```
+
 
