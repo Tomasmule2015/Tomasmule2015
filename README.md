@@ -233,4 +233,7 @@ int main() {
   协程原理：
   当出现IO阻塞的时候，由协程的调度器进行调度，通过将数据流立刻yield掉（主动让出），并且记录当前栈上的数据，阻塞完后立刻再通过线程恢复栈，并把阻塞的结果放到这个线程上去跑，这样看上去好像跟写同步代码没有任何差别，这整个流程可以称为coroutine，而跑在由coroutine负责调度的线程称为Fiber。比如Golang里的 go关键字其实就是负责开启一个Fiber，让func逻辑跑在上面。  
   
-
+### 3月19日
+  weg go 项目 , go 环境安装：https://linuxize.com/post/how-to-install-go-on-centos-8/  
+  go models概念，编译时出错 package mymath is not in GOROOT (/usr/lib/golang/src/mymath) 
+  
