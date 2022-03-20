@@ -260,4 +260,9 @@ int main() {
 ### 3月19日
   weg go 项目 , go 环境安装：https://linuxize.com/post/how-to-install-go-on-centos-8/  
   go models概念，编译时出错 package mymath is not in GOROOT (/usr/lib/golang/src/mymath) 
+    
+### 3月20日
+    调试blog， blog并不会显示在搜索引擎上，后续需要解决。
+    
+    
   
