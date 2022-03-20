@@ -24,7 +24,7 @@ x<sup>2</sup>2
 下标
 a~0~=1
 a<sub>0</sub>
-
+bundle exec jekyll serve
 -->
 <!--
 ## 浅谈时间复杂度
