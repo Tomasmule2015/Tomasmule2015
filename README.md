@@ -263,6 +263,6 @@ int main() {
     
 ### 3月20日
     调试blog， blog并不会显示在搜索引擎上，后续需要解决。
-    
+    https://marklodato.github.io/visual-git-guide/index-zh-cn.html  
     
   
