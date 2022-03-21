@@ -266,4 +266,10 @@ int main() {
     调试blog， blog并不会显示在搜索引擎上，后续需要解决。
     https://marklodato.github.io/visual-git-guide/index-zh-cn.html  
     
-  
+### 3月21日
+    Go goroutine理解 ： https://segmentfault.com/a/1190000018150987  
+    go原子操作： https://juejin.cn/post/7010590496204521485
+    go 1.18 release note: https://tip.golang.org/doc/go1.18 
+  操作系统：
+    内存映射mmap: https://www.jianshu.com/p/719fc4758813  
+    linux内存管理： https://www.jianshu.com/p/fb345b94501f  
