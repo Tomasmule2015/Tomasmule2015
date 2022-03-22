@@ -311,4 +311,5 @@ https://juejin.cn/post/6844903554180726791  gRPC负载均衡-Golang
     4. fair
     5. url_hash
     
+    https://segmentfault.com/a/1190000021199728  图解一致性哈希  
     
