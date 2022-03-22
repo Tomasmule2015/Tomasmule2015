@@ -312,4 +312,5 @@ https://juejin.cn/post/6844903554180726791  gRPC负载均衡-Golang
     5. url_hash
     
     https://segmentfault.com/a/1190000021199728  图解一致性哈希  
+    一致性哈希， 应用在分布式系统中
     
