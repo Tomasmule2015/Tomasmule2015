@@ -336,4 +336,8 @@ https://juejin.cn/post/6844903554180726791  gRPC负载均衡-Golang
     BGP 是一个外部网关协议，在不同的自治系统之间交换路由信息，由于网络环境复杂，需要保证可靠传输，所以采用 TCP  
     
    ### 3/23 
-   linux时间轮算法
+   linux时间轮算法  http://www.langdebuqing.com/algorithm%20notebook/%E5%A4%9A%E7%BA%A7%E6%97%B6%E9%97%B4%E8%BD%AE%E5%AE%9A%E6%97%B6%E5%99%A8.html  
+   Linux定时器实现，使用了时间轮，5个时间轮。 第一个有256个槽，占用8字节，其余占用6自己，64个曹。
+    |xxxxxxxx|xxxxxx|xxxxxx|xxxxxx|xxxxxx|  
+    8 + 6 + 6 + 6 + 6 = 32位
+    可以表示0-2<sup>32</sup> 的范围
