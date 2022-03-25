@@ -91,6 +91,24 @@ SYN 洪泛攻击
  PRIMARY KEY (product_id)
  );
  ```
+ 
+ 删除TABLE
+ ```SQL
+ DROP TABLE Product
+ ```
+ 表定义的更新
+ ```SQL
+ 添加
+ ALTER TABLE <表名> ADD COLUMN <列的定义>;
+ 删除
+ ALTER TABLE <表名> DROP COLUMN <列名>;
+ 表变更后无法恢复
+ 
+ 向表中插入数据
+ BEGIN TRANSACTION;
+ INSERT INTO Product VALUES ('0001', 'T恤衫', '衣服', 1000, 500, '2022-03-25');
+ COMMIT;
+ ```
 
 <!--
 ## 浅谈时间复杂度
