@@ -77,6 +77,20 @@ SYN 洪泛攻击
 3. 延迟任务控制块分配。syn cache ro syn cookie
 4. SYN cookie: 
 
+#### SQL
+ C:\Progra~1\PostgreSQL\14\bin\psql.exe -U postgres  
+ ```SQL
+ CREATE DATABASE shop;
+ CREATE TABLE Product
+ (product_id CHAR(4) NOT NULL,
+ product_name VARCHAR(100) NOT NULL,
+ product_type VARCHAR(32) NOT NULL,
+ sale_price INTEGER ,
+ purchase_price INTEGER ,
+ regist_date DATE ,
+ PRIMARY KEY (product_id)
+ );
+ ```
 
 <!--
 ## 浅谈时间复杂度
