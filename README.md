@@ -26,7 +26,45 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 3/26 日
+用户态内存分配：
+ptmalloc: glibc的一个内存管理 pthreads  
+chunk 双向链表， 每个bins都维护了大小相近的双向链表的chunk
+有以下几种bins:  
+fast bin
+unsorted bin
+small bin
+large bin  
+当用户调用malloc的时候，能很快找到用户需要分配的内存大小是否在维护的bin上，如果在某一个bin上，就可以通过双向链表去查找合适的chunk内存块给用户使用。   
+还有三种特殊的chunk  
+top chunk top chunk相当于分配区的顶部空闲内存, 
+mmaped chunk 当分配的内存非常大（大于分配阀值，默认128K）的时候，需要被mmap映射  
+last remainder chunk  
+ptmalloc的主要问题其实是内存浪费、内存碎片、以及加锁导致的性能问题  
+sbrk 与 mmap  
 
+
+tcmalloc: google  
+小对象<=32 k ThreadCache获取， 大的是CentralCache获取
+ThreadCache 处理不需要加锁，因为是每个线程都有的  
+
+tcmalloc的改进  
+ThreadCache会阶段性的回收内存到CentralCache里。 解决了ptmalloc2中arena之间不能迁移的问题。  
+Tcmalloc占用更少的额外空间。例如，分配N个8字节对象可能要使用大约8N * 1.01字节的空间。即，多用百分之一的空间。Ptmalloc2使用最少8字节描述一个chunk。  
+更快。小对象几乎无锁， >32KB的对象从CentralCache中分配使用自旋锁。 并且>32KB对象都是页面对齐分配，多线程的时候应尽量避免频繁分配，否则也会造成自旋锁的竞争和页面对齐造成的浪费。  
+tcmalloc的优势  
+小内存可以在ThreadCache中不加锁分配(加锁的代价大约100ns)  
+大内存可以直接按照大小分配不需要再像ptmalloc一样进行查找  
+大内存加锁使用更高效的自旋锁  
+减少了内存碎片  
+
+jemalloc: facebook
+
+总的来看，作为基础库的ptmalloc是最为稳定的内存管理器，无论在什么环境下都能适应，但是分配效率相对较低。而tcmalloc针对多核情况有所优化，性能有所提高，但是内存占用稍高，大内存分配容易出现CPU飙升。jemalloc的内存占用更高，但是在多核多线程下的表现也最为优异。  
+
+http://www.cnhalo.net/2016/06/13/memory-optimize/  
+https://www.cyningsun.com/07-07-2018/memory-allocator-contrasts.html  
+https://blog.csdn.net/songchuwang1868/article/details/89951543  
 ### 3/25日
 target: TCP/IP/MAC  
 #### TCP
