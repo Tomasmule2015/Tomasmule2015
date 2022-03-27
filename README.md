@@ -117,6 +117,19 @@ SYN 洪泛攻击
 2. 限流同时释放半连接（不是很好的策略）
 3. 延迟任务控制块分配。syn cache ro syn cookie
 4. SYN cookie: 
+设t为一个缓慢增长的时间戳(典型实现是每64s递增一次)  
+设m为客户端发送的SYN报文中的MSS选项值  
+设s是连接的元组信息(源IP,目的IP,源端口，目的端口)和t经过密码学运算后的Hash值，即s = hash(sip,dip,sport,dport,t)，
+s的结果取低 24 位  
+则初始序列号n为：
+高 5 位为t mod 32  
+接下来3位为m的编码值  
+低 24 位为s  
+#### SYN cookie 缺点
+MSS的编码只有3位，因此最多只能使用 8 种MSS值
+服务器必须拒绝客户端SYN报文中的其他只在SYN和SYN+ACK中协商的选项，原因是服务器没有地方可以保存这些选项，比如Wscale和SACK
+增加了密码学运算
+
 
 #### SQL
  C:\Progra~1\PostgreSQL\14\bin\psql.exe -U postgres  
