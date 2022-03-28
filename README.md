@@ -26,6 +26,16 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 3/28 日
+https://www.jianshu.com/p/fe5ccfc5d7bd HTTP 的本质？HTTP 和 RPC 的区别？  
+HTTP 和 RPC 其实是两个维度的东西， HTTP 指的是通信协议。  
+RPC 的通信可以用 HTTP 协议，也可以自定义协议，是不做约束的。  
+rpc是远端过程调用，其调用协议通常包含传输协议和序列化协议  
+grpc 用的http2协议
+https与http 端口不一样，http 80, https 443
+http 明文， https密文加密，且经过认真，可防止运营商劫持
+
+
 ### 3/26 日
 用户态内存分配：
 ptmalloc: glibc的一个内存管理 pthreads  
