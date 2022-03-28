@@ -27,6 +27,7 @@ a<sub>0</sub>
 bundle exec jekyll serve
 -->
 ### 3/28 日
+git submode : https://www.jianshu.com/p/9000cd49822c  
 https://www.jianshu.com/p/fe5ccfc5d7bd HTTP 的本质？HTTP 和 RPC 的区别？  
 HTTP 和 RPC 其实是两个维度的东西， HTTP 指的是通信协议。  
 RPC 的通信可以用 HTTP 协议，也可以自定义协议，是不做约束的。  
