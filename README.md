@@ -50,7 +50,9 @@ RPC： 屏蔽网络编程细节，实现远程调用方法就跟调用本地一�
 隐藏底层网络通信的复杂性，让我们更专注于业务逻辑。  
 protobuf 是互联网常用的编码协议， 而ASN1是通信行业的编码协议。
 grpc面试题
-https://www.jianshu.com/p/c0f81d4c6384  
+https://www.jianshu.com/p/c0f81d4c6384
+rpc 与restful 区别？
+
 ### 3/26 日
 用户态内存分配：
 ptmalloc: glibc的一个内存管理 pthreads  
