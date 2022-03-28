@@ -65,6 +65,10 @@ jemalloc: facebook
 http://www.cnhalo.net/2016/06/13/memory-optimize/  
 https://www.cyningsun.com/07-07-2018/memory-allocator-contrasts.html  
 https://blog.csdn.net/songchuwang1868/article/details/89951543  
+字节对齐  
+https://www.cnblogs.com/clover-toeic/p/3853132.html  
+每个总线周期从偶地址开始访问32位内存数据，内存数据以字节为单位存放。如果一个32位的数据没有存放在4字节整除的内存地址处，那么处理器就需要2个总线周期对其进行访问，显然访问效率下降很多。 
+
 ### 3/25日
 target: TCP/IP/MAC  
 #### TCP
