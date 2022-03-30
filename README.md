@@ -31,7 +31,33 @@ bundle exec jekyll serve
 重点 快排，归并，堆排  能手写代码
 
 快排positin 
+```C++
+int partition(vector<int>& arr, int left, int right)
+{
+  int val = arr[left];
+  int tmp;
+  int l = left;
+  int r = right;
+  while (l < r) {
+       while (l < r && arr[r] >= val) {r--;}
+       arr[l] = arr[r];
+       while (l < r && arr[l] <= val) {l++;}
+       arr[r] = arr[l];
+  }
+  arr[l] = val;
+  return l;
+}
 
+void qsort(vector<int>& arr, int s, int e)
+{
+    if (s >= e) {
+      return;
+    }
+    int i = partition(arr, s, e);
+    qsort(arr, s, i - 1, tn);
+    qsort(arr, i + 1, e, tn);
+}
+```
 
 
 
