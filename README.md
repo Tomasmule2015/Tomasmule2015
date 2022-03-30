@@ -26,6 +26,23 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 3/29 日
+分布式一致性算法
+CAP定理：一致性，可用性，分区一致性
+对于多数大型互联网应用的场景，主机众多、部署分散。而且现在的集群规模越来越大，所以节点故障、网络故障是常态。这种应用一般要保证服务可用性达到N个9，即保证P和A，只有舍弃C（退而求其次保证最终一致性）。虽然某些地方会影响客户体验，但没达到造成用户流程的严重程度。  
+对于涉及到钱财这样不能有一丝让步的场景，C必须保证。网络发生故障宁可停止服务，这是保证CA，舍弃P。貌似这几年国内银行业发生了不下10起事故，但影响面不大，报到也不多，广大群众知道的少。还有一种是保证CP，舍弃A，例如网络故障时只读不写。  
+
+BASE理论：BASE理论是Basically Available(基本可用)，Soft State（软状态）和Eventually Consistent（最终一致性）三个短语的缩写  
+
+2PC协议
+3PC协议
+一致性算法Paxos
+一致性算法Raft
+
+https://juejin.cn/post/6844903621499289613
+
+
+
 ### 3/28 日
 git submode : https://www.jianshu.com/p/9000cd49822c  
 https://www.jianshu.com/p/fe5ccfc5d7bd HTTP 的本质？HTTP 和 RPC 的区别？  
