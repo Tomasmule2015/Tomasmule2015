@@ -26,6 +26,11 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4/2 日
+红黑树与AVL树的区别？  
+AVL树严格平衡二叉树，其插入和删除需要经常触发旋转操作保持平衡，旋转操作非常耗时。
+红黑树确保没有一条路径会比其他路径长出两倍。
+
 ### 4/1 日 
 https://blog.nowcoder.net/n/934754a0d0c848168597bc0fdf4e97ff  腾讯三年面经  
 红黑树： https://segmentfault.com/a/1190000012728513    
