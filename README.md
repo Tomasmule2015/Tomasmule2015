@@ -26,6 +26,24 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4/6 日
+四次挥手的过程  
+主动关闭方 -> FIN， seq  被动关闭方  
+           <-ACK , seq +1  
+           <- FIN, seq = k  
+           -> ACK， seq = k + 1  
+time wait  
+全部关闭
+
+time wait 状态的作用：  
+ ACK对面没收到，接收被动方重发的FIN包。  
+在第四次挥手后，经过2msl的时间足以让本次连接产生的所有报文段都从网络中消失，这样下一次新的连接中就肯定不会出现旧连接的报文段了   
+time wait 关闭的危害：   
+高并发下会出现大量socket处于time_wait状态  
+解决time_wait过多：  
+net.ipv4.tcp_tw_reuse = 1 表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭；  
+net.ipv4.tcp_tw_recycle = 1 表示开启TCP连接中TIME-WAIT sockets的快速回收，默认为0，表示关闭  
+
 ### 4/2 日
 红黑树与AVL树的区别？  
 AVL树严格平衡二叉树，其插入和删除需要经常触发旋转操作保持平衡，旋转操作非常耗时。
