@@ -26,6 +26,16 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4月10日
+C++ 智能指针了解吗？
+目的： 为了解决内存泄漏问题  
+种类： unique_ptr, shared_ptr, weak_ptr  
+分别应用场景：  
+unique_ptr: 独享指针，不支持拷贝和赋值操作，只能通过move函数将其所有权转交其它指针。
+shared_ptr 会出现什么问题？ 如何解决  
+环状引用（class A 有class B的shared_ptr, class B 有 class A 的shared_ptr），引入weak_ptr解决, weak_ptr 不会使引用计数增加。 
+
+
 ### 4/9 日
 C++ primer
 #### 13.6 moving objects
