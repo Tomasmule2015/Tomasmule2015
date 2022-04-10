@@ -26,6 +26,18 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4/9 日
+C++ primer
+#### 13.6 moving objects
+为什么要move 而不是拷贝?
+1. 不需要内存拷贝  
+2. 类中的资源（IO 或者 unique_ptr 指针）不能共享  
+右值引用 使用&& 而不是 &  
+左值是对象的身份，右值是对象的值  
+
+
+moving 对象
+
 ### 4/6 日
 四次挥手的过程  
 主动关闭方 -> FIN， seq  被动关闭方  
