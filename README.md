@@ -26,6 +26,10 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4月12日
+kerberos入坑指南
+https://www.jianshu.com/p/fc2d2dbd510b  
+
 ### 4月11日
 为什么需要std::move()？
 1. 不用拷贝内存
