@@ -27,6 +27,7 @@ a<sub>0</sub>
 bundle exec jekyll serve
 -->
 ### 4月13日
+rsa推导： https://www.jianshu.com/p/ab3e9dbe334d  
 Kerberos 服务器 ：  
 1. 它知道的用户和服务（称为主体）及其各自的 Kerberos 密码的数据库
 2. 一个认证服务器（Authentication Server，简称 AS）：验证Client端的身份，验证通过就会给一张票证授予票证（Ticket Granting Ticket，简称 TGT）给 Client
