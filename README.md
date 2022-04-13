@@ -28,8 +28,8 @@ bundle exec jekyll serve
 -->
 ### 4月13日
 RSA原理&过程  
-秘钥生成过程  
-1.  p 和 q是两个大素数  
+秘钥生成过程  RSA 基于质因数分解
+1.  p 和 q是两个大素数  
 
 2. n = p * q  
 
