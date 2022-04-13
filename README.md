@@ -26,6 +26,20 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4月13日
+Kerberos 服务器 ：  
+1. 它知道的用户和服务（称为主体）及其各自的 Kerberos 密码的数据库
+2. 一个认证服务器（Authentication Server，简称 AS）：验证Client端的身份，验证通过就会给一张票证授予票证（Ticket Granting Ticket，简称 TGT）给 Client
+3. 一个票据授权服务器（Ticket Granting Server，简称 TGS）：通过 TGT（AS 发送给 Client 的票）获取访问 Server 端的票（Server Ticket，简称 ST）。ST（Service Ticket）也有资料称为 TGS Ticket。
+Kerberos 服务是单点登录系统吗，进行一次自我验证，即可自动保护该会话过程中所有后续事务的安全。  
+
+优缺点：  
+
+
+攻击：  
+伪造票据：   黄金票据 伪造TGT认购权限，可以获取任何kerberos服务权限
+白银票据： 伪造ST服务票据，只能访问指定的服务
+
 ### 4月12日
 kerberos入坑指南
 https://www.jianshu.com/p/fc2d2dbd510b  
