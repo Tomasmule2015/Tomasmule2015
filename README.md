@@ -32,6 +32,99 @@ bundle exec jekyll serve
 UML类图： https://www.jianshu.com/p/57620b762160  
 泛化、实现、关联、聚合、组合、依赖  
 
+```C++
+
+class Observer
+{
+public:
+    virtual void update(float temp, float humidity, float pressuer) = 0;
+};
+
+class Subject {
+public:
+    virtual void register(Observer *o) = 0;
+    virtual void remove(Observer *o) = 0;
+    virtual void notify(void) = 0;
+};
+
+class WeatherData: public Subject {
+private:
+    std::set<Observer*> obs;
+    float tempreature;
+    float humidity;
+    float pressure;
+public:
+    WeatherData() {
+        obs.clear();
+    }
+    void register(Observer *o) {
+        obs.insert(o);
+    }
+    void remove(Observer *o) {
+        obs.erase(o);
+    }
+    void notify(void) {
+        for (Observer* p : obs) {
+            p->update(tempreature, humidity, pressure);
+        }
+    }
+    void change() {
+        notify();
+    }
+    void setInfo(float tempreature, float humidity, float pressure) {
+        this->tempreature = tempreature;
+        this->humidity = humidity;
+        this->pressure = pressure;
+        change();
+    }
+    ~WeatherData() {
+        obs.clear();
+    }
+};
+
+class Display{
+public:
+    virtual void display() = 0;
+};
+
+class CurrentConditionDisplay : Observer, Display {
+private:
+    float tempreature;
+    float humidity;
+    float pressure;
+    Subject* weatherData = nullptr;
+public:
+    CurrentConditionDisplay(Subject* WeatherData) {
+        this->weatherData = WeatherData;
+        weatherData->register(this);
+    }
+    void update(float tempreature, float humidity, float pressure) {
+        this->tempreature = tempreature;
+        this->humidity = humidity;
+        this->pressure = pressure;
+        display();
+    }
+    void display() {
+        std::cout<<"current conditions: "<<"t: "<<
+            tempreature<<" h: "<<humidity<<" p: "<<pressure<<std::endl;
+    }
+};
+
+int main()
+{
+    // build a data
+    WeatherData *weatherData = new WeatherData();
+
+    CurrentConditionDisplay *curDisplay = new CurrentConditionDisplay((Subject*)weatherData);
+    weatherData->setInfo(85, 65, 30.4f);
+    weatherData->setInfo(89, 66, 30.4f);
+    weatherData->setInfo(83, 67, 30.9f);
+    delete weatherData;
+    delete curDisplay;
+    return 0;
+}
+```
+
 ### 4月13日
 RSA原理&过程   求两个大数的乘积很容易，但将乘积分解为两个乘数很困难  
 秘钥生成过程  RSA 基于质因数分解
