@@ -42,7 +42,7 @@ public:
 
 class Subject {
 public:
-    virtual void register(Observer *o) = 0;
+    virtual void registerObs(Observer *o) = 0;
     virtual void remove(Observer *o) = 0;
     virtual void notify(void) = 0;
 };
@@ -57,7 +57,7 @@ public:
     WeatherData() {
         obs.clear();
     }
-    void register(Observer *o) {
+    void registerObs(Observer *o) {
         obs.insert(o);
     }
     void remove(Observer *o) {
@@ -96,7 +96,7 @@ private:
 public:
     CurrentConditionDisplay(Subject* WeatherData) {
         this->weatherData = WeatherData;
-        weatherData->register(this);
+        weatherData->registerObs(this);
     }
     void update(float tempreature, float humidity, float pressure) {
         this->tempreature = tempreature;
