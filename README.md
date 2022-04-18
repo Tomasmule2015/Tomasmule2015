@@ -36,6 +36,55 @@ bundle exec jekyll serve
 6. 细节设计 (权衡不同方案的利弊）
 7. 找出并解决瓶颈
 
+tiny URL:  https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR  
+
+#### 1. Why do we need URL shortening?  
+#### 2. Requirements and Goals of the System  
+Functional Requirements:  
+Non-Functional Requirements:  
+Extended Requirements:  
+#### 3. Capacity Estimation and Constraints  
+Traffic estimates:  
+Storage estimates:  
+Bandwidth estimates:  
+Memory estimates:   
+High-level estimates:  
+#### 4. System APIs
+Parameters:  
+Returns:  
+How do we detect and prevent abuse?   
+#### 5. Database Design
+A few observations about the nature of the data we will store:  
+Database Schema:  
+What kind of database should we use?   
+#### 6. Basic System Design and Algorithm
+a. Encoding actual URL  
+What are the different issues with our solution?  
+Workaround for the issues:   
+b. Generating keys offline  
+We can have a standalone Key Generation Service (KGS)  
+Can concurrency cause problems?  
+What would be the key-DB size?  
+Isn’t KGS a single point of failure?  
+Can each app server cache some keys from key-DB?  
+How would we perform a key lookup?  
+Should we impose size limits on custom aliases?  
+
+#### 7. Data Partitioning and Replication
+a. Range Based Partitioning:  
+b. Hash-Based Partitioning:  
+
+#### 8. Cache  
+How much cache memory should we have?   
+Which cache eviction policy would best fit our needs?   
+How can each cache replica be updated?  
+#### 9. Load Balancer (LB)  
+We can add a Load balancing layer at three places in our system:  
+#### 10. Purging or DB cleanup  
+#### 11. Telemetry  
+#### 12. Security and Permissions  
+
+
 ### 4月17日
 设计模式：
 装饰模式  对扩展开放，对修改关闭  
