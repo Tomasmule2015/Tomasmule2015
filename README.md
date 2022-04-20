@@ -26,6 +26,26 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4月20日
+你在工作中遇到过印象深刻的困难是什么，你怎么克服的？ https://juejin.cn/post/7035844532667154463  
+
+部署角色：
+KDC
+KDA
+KDE
+
+模块划分：
+cal: 适配openssl加解密接口，tls通信接口，证书管理接口。 后续支持替换openssl
+rcm: 资源管理模块，管理参数，密钥资源
+newctx, setpara, getpara, apply idk\ick, process 接收请求， free, get从消息中获取。
+ssn:
+new 需要res, setpara, get, connect, process, encap, decap, free
+start:
+kdm:
+mpm:
+oal:
+scm:
+
 ### 4月18日
 系统设计步骤：
 1. 明确需求
