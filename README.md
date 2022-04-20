@@ -46,9 +46,9 @@ start:
     初始化模块  
 kdm: 密钥生成，销毁，存储  
     rootkey, idk, ick  
-mpm: 协议实现，head + body
-oal: 公共辅助模块，维测，内存，时间轮
-scm: 适配模块，调用cal
+mpm: 协议实现，head + body  
+oal: 公共辅助模块，维测，内存，时间轮  
+scm: 适配模块，调用cal  
 
 ### 4月18日
 系统设计步骤：
