@@ -30,21 +30,23 @@ bundle exec jekyll serve
 你在工作中遇到过印象深刻的困难是什么，你怎么克服的？ https://juejin.cn/post/7035844532667154463  
 
 部署角色：
-KDC
-KDA
-KDE
+KDC 分发密钥，分发idk,ick
+KDA 转发
+KDE 通信实体
 
 模块划分：
-cal: 适配openssl加解密接口，tls通信接口，证书管理接口。 后续支持替换openssl
-rcm: 资源管理模块，管理参数，密钥资源
-newctx, setpara, getpara, apply idk\ick, process 接收请求， free, get从消息中获取。
+cal: 适配openssl加解密接口，tls通信接口，证书管理接口。 后续支持替换openssl  my
+rcm: 资源管理模块，管理参数，密钥资源 my
+newctx, setpara, getpara, apply idk\ick, process 接收请求， free, get从消息中获取。  
 ssn:
-new 需要res, setpara, get, connect, process, encap, decap, free
+new 需要res, setpara, get, connect, process, encap, decap, free  
 start:
-kdm:
-mpm:
-oal:
-scm:
+    初始化模块  
+kdm: 密钥生成，销毁，存储  
+    rootkey, idk, ick  
+mpm: 协议实现，head + body
+oal: 公共辅助模块，维测，内存，时间轮
+scm: 适配模块，调用cal
 
 ### 4月18日
 系统设计步骤：
