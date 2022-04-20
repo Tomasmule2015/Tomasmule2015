@@ -27,6 +27,8 @@ a<sub>0</sub>
 bundle exec jekyll serve
 -->
 ### 4月20日
+介绍最熟悉的项目： https://juejin.cn/post/6844904110227980302  
+
 你在工作中遇到过印象深刻的困难是什么，你怎么克服的？ https://juejin.cn/post/7035844532667154463  
 
 部署角色：
