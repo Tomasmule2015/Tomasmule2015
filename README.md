@@ -26,6 +26,13 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4月22日
+idk 加密ick, idk作为iv, aes加密
+idk生成， pbkdf算法
+盐值： 随机数
+key: rootkey明文
+info: id  
+一对ick的生成： 明文-> idk加密  
 ### 4月20日
 介绍最熟悉的项目： https://juejin.cn/post/6844904110227980302  
 
