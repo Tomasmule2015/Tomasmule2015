@@ -26,6 +26,7 @@ a~0~=1
 a<sub>0</sub>
 bundle exec jekyll serve
 -->
+### 4月28日
 ### 4月22日
 idk 加密ick, idk作为iv, aes加密
 idk生成， pbkdf算法
