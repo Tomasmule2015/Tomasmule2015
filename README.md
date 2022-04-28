@@ -27,6 +27,10 @@ a<sub>0</sub>
 bundle exec jekyll serve
 -->
 ### 4月28日
+哈希设计： 
+单机： hash map + double link
+分布式： 一致性哈希  
+
 ### 4月22日
 idk 加密ick, idk作为iv, aes加密
 idk生成， pbkdf算法
